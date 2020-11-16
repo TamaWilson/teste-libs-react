@@ -1,0 +1,1 @@
+### Ainda não foi definida uma arquitetura para redux

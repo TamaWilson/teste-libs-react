@@ -1,0 +1,1 @@
+### É algo interessante a nível de design mas não se sabe ao certo a viabilidade do mesmo nos sistemas.
