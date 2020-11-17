@@ -55,8 +55,8 @@ function Home() {
             <MxInput></MxInput>
           </div>
           <div className="col-4">
-            <MxInput>
-              <MxInputIcon
+            <MxInput placeholder="Teste">
+              <Button
                 name="teste"
                 location="after"
                 options={{ icon: 'mention' }}

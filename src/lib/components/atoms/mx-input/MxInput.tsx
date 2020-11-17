@@ -4,5 +4,9 @@ import React from 'react';
 // import { Container } from './styles';
 
 export const MxInput: React.FC<ITextBoxOptions> = (props) => {
-  return <TextBox className="mx-input">{props.children}</TextBox>;
+  return (
+    <TextBox className="mx-input" {...props}>
+      {props.children}
+    </TextBox>
+  );
 };
