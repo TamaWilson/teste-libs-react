@@ -1,7 +1,6 @@
 /* eslint-disable no-use-before-define */
 import React, { FC } from 'react';
 import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { makeStyles } from '@material-ui/core/styles';
 import styled from 'styled-components';
@@ -34,18 +33,26 @@ const useStyles = makeStyles({
   }
 });
 
-const StyledAutocomplete = styled(({ ...props }) => (
-  <Autocomplete {...props}></Autocomplete>
-))`
-  &:hover {
-  }
-`;
-
 const StyledTextInput = styled(({ ...props }) => (
   <TextField {...props}></TextField>
 ))`
-  &:hover {
+  && .MuiAutocomplete-inputRoot {
+    padding: 10px;
+  }
+  && :hover fieldset {
     border: 2px solid #b4bbc2;
+  }
+  && .MuiAutocomplete-inputRoot.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border: 2px solid #0066b2;
+  }
+  && .MuiOutlinedInput-input {
+    padding: 6px;
+  }
+  && .MuiIconButton-root {
+    margin-right: 0px;
+  }
+  && .MuiAutocomplete-endAdornment {
+    right: 8px;
   }
 `;
 
@@ -53,34 +60,36 @@ export const SearchAutocomplete: FC = () => {
   const classes = useStyles();
 
   return (
-    <Autocomplete
-      id="country-select-demo"
-      options={countries}
-      classes={{
-        option: classes.option
-      }}
-      autoHighlight
-      getOptionLabel={(option: Countries) => option.label}
-      renderOption={(option: Countries) => (
-        <React.Fragment>
-          <span>{countryToFlag(option.code)}</span>
-          {option.label} ({option.code}) +{option.phone}
-        </React.Fragment>
-      )}
-      renderInput={(params: any) => (
-        <>
-          <StyledTextInput
-            {...params}
-            placeholder="Escolha uma coisa"
-            variant="outlined"
-            inputProps={{
-              ...params.inputProps,
-              autoComplete: 'new-password' // disable autocomplete and autofill
-            }}
-          />
-        </>
-      )}
-    />
+    <>
+      <Autocomplete
+        id="country-select-demo"
+        options={countries}
+        classes={{
+          option: classes.option
+        }}
+        autoHighlight
+        getOptionLabel={(option: Countries) => option.label}
+        renderOption={(option: Countries) => (
+          <React.Fragment>
+            <span>{countryToFlag(option.code)}</span>
+            {option.label} ({option.code}) +{option.phone}
+          </React.Fragment>
+        )}
+        renderInput={(params) => (
+          <>
+            <StyledTextInput
+              {...params}
+              placeholder="Escolha uma coisa"
+              variant="outlined"
+              inputProps={{
+                ...params.inputProps,
+                autoComplete: 'new-password' // disable autocomplete and autofill
+              }}
+            />
+          </>
+        )}
+      />
+    </>
   );
 };
 

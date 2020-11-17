@@ -1,0 +1,28 @@
+:root {
+  --color-neutral-base: #b4bbc2;
+  --color-brand-primary-base: #0066b2;
+}
+
+[class*='mx-input'].dx-texteditor.dx-editor-outlined.dx-state-hover.dx-state-hover {
+  border: 2px solid var(--color-neutral-base);
+}
+
+[class*='mx-input'].dx-texteditor.dx-editor-outlined.dx-state-focused {
+  border: 2px solid var(--color-brand-primary-base);
+}
+
+[class*='mx-input'].dx-texteditor {
+  background: #fff;
+  border: 1px solid var(--color-neutral-base);
+  border-radius: 4px;
+  padding: 8px;
+}
+
+[class*='mx-input'] .dx-texteditor-input {
+  padding: 8px;
+  cursor: pointer;
+}
+
+[class*='mx-input'] .dx-texteditor-input:focus {
+  cursor: text;
+}

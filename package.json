@@ -10,6 +10,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.56",
     "@reduxjs/toolkit": "^1.4.0",
     "@testing-library/jest-dom": "^5.11.4",
@@ -20,7 +21,7 @@
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
     "devextreme": "20.2",
-    "devextreme-react": "20.2.4-build-20316-1558",
+    "devextreme-react": "20.2",
     "react": "^17.0.1",
     "react-detect-offline": "^2.4.0",
     "react-dom": "^17.0.1",
